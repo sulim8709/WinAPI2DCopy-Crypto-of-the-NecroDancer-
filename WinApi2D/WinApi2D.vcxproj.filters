@@ -67,6 +67,9 @@
     <Filter Include="Object\Map">
       <UniqueIdentifier>{9f3c24ba-7e30-486b-b0ca-8648d10081ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Title">
+      <UniqueIdentifier>{124e1aae-cc7a-4585-8150-bf3e893573c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -104,9 +107,6 @@
     </ClInclude>
     <ClInclude Include="CSceneManager.h">
       <Filter>Engine\Manager</Filter>
-    </ClInclude>
-    <ClInclude Include="CScene_Start.h">
-      <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="CResource.h">
       <Filter>Resouce</Filter>
@@ -153,15 +153,6 @@
     <ClInclude Include="CUI.h">
       <Filter>Object\UI</Filter>
     </ClInclude>
-    <ClInclude Include="CMissile.h">
-      <Filter>Object\Character</Filter>
-    </ClInclude>
-    <ClInclude Include="CMonster.h">
-      <Filter>Object\Character</Filter>
-    </ClInclude>
-    <ClInclude Include="CPlayer.h">
-      <Filter>Object\Character</Filter>
-    </ClInclude>
     <ClInclude Include="CUIManager.h">
       <Filter>Engine\Manager</Filter>
     </ClInclude>
@@ -186,6 +177,9 @@
     <ClInclude Include="CBackGround.h">
       <Filter>Object\Map</Filter>
     </ClInclude>
+    <ClInclude Include="CScene_Title.h">
+      <Filter>Scene\Title</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinApi2D.cpp">
@@ -208,9 +202,6 @@
     </ClCompile>
     <ClCompile Include="CSceneManager.cpp">
       <Filter>Engine\Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="CScene_Start.cpp">
-      <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="CResource.cpp">
       <Filter>Resouce</Filter>
@@ -254,15 +245,6 @@
     <ClCompile Include="CUI.cpp">
       <Filter>Object\UI</Filter>
     </ClCompile>
-    <ClCompile Include="CMissile.cpp">
-      <Filter>Object\Character</Filter>
-    </ClCompile>
-    <ClCompile Include="CMonster.cpp">
-      <Filter>Object\Character</Filter>
-    </ClCompile>
-    <ClCompile Include="CPlayer.cpp">
-      <Filter>Object\Character</Filter>
-    </ClCompile>
     <ClCompile Include="CUIManager.cpp">
       <Filter>Engine\Manager</Filter>
     </ClCompile>
@@ -286,6 +268,9 @@
     </ClCompile>
     <ClCompile Include="CBackGround.cpp">
       <Filter>Object\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene_Title.cpp">
+      <Filter>Scene\Title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

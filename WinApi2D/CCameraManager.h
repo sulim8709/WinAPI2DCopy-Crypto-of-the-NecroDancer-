@@ -1,7 +1,7 @@
 #pragma once
 
 class CGameObject;
-class CTexture;
+class CD2DImage;
 
 enum class CAM_EFFECT
 {
@@ -40,7 +40,7 @@ private:
 public:
 	void init();
 	void update();
-	void render(HDC hDC);
+	void render();
 
 	void SetLookAt(fPoint lookAt);
 	void SetTargetObj(CGameObject* target);
