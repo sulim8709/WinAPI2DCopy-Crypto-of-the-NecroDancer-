@@ -70,6 +70,18 @@
     <Filter Include="Scene\Title">
       <UniqueIdentifier>{124e1aae-cc7a-4585-8150-bf3e893573c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Stage_01">
+      <UniqueIdentifier>{ed0b9428-a3fd-4bd6-b2e0-a5085f7477d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\SceneObject">
+      <UniqueIdentifier>{f21476e2-714e-4ae7-90d6-cc0aa50289b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\SceneObject\Stage_01">
+      <UniqueIdentifier>{7677988f-fbf3-4235-a337-18a2f1c62f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\SceneObject\Title">
+      <UniqueIdentifier>{96813422-88fc-4e51-a1c7-39bd79b14248}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -180,6 +192,12 @@
     <ClInclude Include="CScene_Title.h">
       <Filter>Scene\Title</Filter>
     </ClInclude>
+    <ClInclude Include="CImageButton.h">
+      <Filter>Object\SceneObject\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="CImageObject.h">
+      <Filter>Object\SceneObject\Title</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinApi2D.cpp">
@@ -271,6 +289,12 @@
     </ClCompile>
     <ClCompile Include="CScene_Title.cpp">
       <Filter>Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageButton.cpp">
+      <Filter>Object\SceneObject\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageObject.cpp">
+      <Filter>Object\SceneObject\Title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

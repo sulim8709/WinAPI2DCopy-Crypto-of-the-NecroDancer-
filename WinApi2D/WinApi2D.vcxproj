@@ -160,6 +160,8 @@
     <ClInclude Include="CD2DImage.h" />
     <ClInclude Include="CEventManager.h" />
     <ClInclude Include="CGameObject.h" />
+    <ClInclude Include="CImageButton.h" />
+    <ClInclude Include="CImageObject.h" />
     <ClInclude Include="CKeyManager.h" />
     <ClInclude Include="CPanelUI.h" />
     <ClInclude Include="CPathManager.h" />
@@ -198,6 +200,8 @@
     <ClCompile Include="CD2DImage.cpp" />
     <ClCompile Include="CEventManager.cpp" />
     <ClCompile Include="CGameObject.cpp" />
+    <ClCompile Include="CImageButton.cpp" />
+    <ClCompile Include="CImageObject.cpp" />
     <ClCompile Include="CKeyManager.cpp" />
     <ClCompile Include="CPanelUI.cpp" />
     <ClCompile Include="CPathManager.cpp" />
