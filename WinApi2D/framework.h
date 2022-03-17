@@ -54,7 +54,7 @@ enum class GROUP_GAMEOBJ
 enum class GROUP_SCENE
 {
 	TOOL,
-	Title,
+	START,
 	STAGE_01,
 	STAGE_02,
 
@@ -65,7 +65,21 @@ enum class GROUP_TILE
 {
 	NONE,
 	GROUND,
+	PLATFORM,
 	WALL,
+	SLOPE,
+
+	SIZE,
+};
+
+enum class MON_STATE
+{
+	IDLE,
+	PATROL,
+	TRACE,
+	ATT,
+	RUN,
+	DEAD,
 
 	SIZE,
 };

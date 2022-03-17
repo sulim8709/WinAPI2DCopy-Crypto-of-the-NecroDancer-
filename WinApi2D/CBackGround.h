@@ -7,7 +7,7 @@ private:
 
 public:
 	CBackGround();
-	virtual ~CBackGround();
+	~CBackGround();
 
 	virtual CBackGround* Clone();
 	virtual void update();
