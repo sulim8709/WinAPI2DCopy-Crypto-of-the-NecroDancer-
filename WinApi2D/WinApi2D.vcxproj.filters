@@ -198,6 +198,9 @@
     <ClInclude Include="CImageObject.h">
       <Filter>Object\SceneObject\Title</Filter>
     </ClInclude>
+    <ClInclude Include="CScene_Stage_01.h">
+      <Filter>Scene\Stage_01</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinApi2D.cpp">
@@ -295,6 +298,9 @@
     </ClCompile>
     <ClCompile Include="CImageObject.cpp">
       <Filter>Object\SceneObject\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene_Stage_01.cpp">
+      <Filter>Scene\Stage_01</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

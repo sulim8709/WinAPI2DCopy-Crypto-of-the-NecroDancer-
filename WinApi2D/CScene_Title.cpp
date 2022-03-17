@@ -8,6 +8,7 @@
 void ClickStartButton(DWORD_PTR, DWORD_PTR)
 {
 	ChangeScn(GROUP_SCENE::TOOL);
+	CSoundManager::getInst()->Stop(L"TitleBGM");
 }
 
 void ClickExitButton(DWORD_PTR, DWORD_PTR)
@@ -17,6 +18,9 @@ void ClickExitButton(DWORD_PTR, DWORD_PTR)
 
 void CScene_Title::Enter()
 {
+	CSoundManager::getInst()->AddSound(L"TitleBGM", L"sound\\Title.ogg", false);
+	CSoundManager::getInst()->Play(L"TitleBGM");
+
 	//CD2DImage* m_pTitleImage = CResourceManager::getInst()->LoadD2DImage(L"TitleImage", L"texture\\title.png");
 	CBackGround* m_pTitleImage = new CBackGround;
 	m_pTitleImage->Load(L"TitleImage", L"texture\\Title\\mainmenu.png");
