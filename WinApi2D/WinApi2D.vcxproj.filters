@@ -73,7 +73,13 @@
     <Filter Include="Scene\Stage_01">
       <UniqueIdentifier>{ed0b9428-a3fd-4bd6-b2e0-a5085f7477d2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\UI\StageUI">
+    <Filter Include="Object\SceneObject">
+      <UniqueIdentifier>{b6b56151-0a16-48db-83af-b8d9a8109d15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\SceneObject\TitleObject">
+      <UniqueIdentifier>{30dbbfc4-b93a-40b0-8ea4-6015fdb8691d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\SceneObject\StageObject">
       <UniqueIdentifier>{cdbd2571-1f36-44e7-9b62-2376e83eea04}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -190,10 +196,16 @@
       <Filter>Scene\Stage_01</Filter>
     </ClInclude>
     <ClInclude Include="CHeartObject.h">
-      <Filter>Object\UI\StageUI</Filter>
+      <Filter>Object\SceneObject\StageObject</Filter>
     </ClInclude>
     <ClInclude Include="CBeatNode.h">
-      <Filter>Object\UI\StageUI</Filter>
+      <Filter>Object\SceneObject\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CImageButton.h">
+      <Filter>Object\SceneObject\TitleObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CImageObject.h">
+      <Filter>Object\SceneObject\TitleObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -291,10 +303,16 @@
       <Filter>Scene\Stage_01</Filter>
     </ClCompile>
     <ClCompile Include="CHeartObject.cpp">
-      <Filter>Object\UI\StageUI</Filter>
+      <Filter>Object\SceneObject\StageObject</Filter>
     </ClCompile>
     <ClCompile Include="CBeatNode.cpp">
-      <Filter>Object\UI\StageUI</Filter>
+      <Filter>Object\SceneObject\StageObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageButton.cpp">
+      <Filter>Object\SceneObject\TitleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CImageObject.cpp">
+      <Filter>Object\SceneObject\TitleObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -11,6 +11,7 @@
 CHeartObject::CHeartObject()
 {
 	m_pImg = CResourceManager::getInst()->LoadD2DImage(L"HeartBeatTex", L"texture\\gui\\TEMP_beat_heart.png");
+	
 	m_count = 0;
 
 	SetName(L"Heart");
@@ -24,6 +25,7 @@ CHeartObject::CHeartObject()
 	CAnimation* pAni;
 	pAni = GetAnimator()->FindAnimation(L"HeartBeat");
 	pAni->GetFrame(1).fDuration = 0.19f;
+	
 
 	GetAnimator()->Play(L"HeartBeat");
 }
@@ -53,11 +55,9 @@ void CHeartObject::update()
 
 	CAnimation* pAni;
 	pAni = GetAnimator()->FindAnimation(L"HeartBeat");
-	if (pAni->GetFrame(1).fDuration > 0)
-	{
-		CreateBeatNode();
-	}
 
+
+	CreateBeatNode();
 }
 
 void CHeartObject::CreateBeatNode()
