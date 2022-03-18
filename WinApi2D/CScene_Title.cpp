@@ -7,10 +7,14 @@
 
 void ClickStartButton(DWORD_PTR, DWORD_PTR)
 {
+	ChangeScn(GROUP_SCENE::STAGE_01);
+	CSoundManager::getInst()->Stop(L"TitleBGM");
+}
+void ClickToolButton(DWORD_PTR, DWORD_PTR)
+{
 	ChangeScn(GROUP_SCENE::TOOL);
 	CSoundManager::getInst()->Stop(L"TitleBGM");
 }
-
 void ClickExitButton(DWORD_PTR, DWORD_PTR)
 {
 	PostQuitMessage(0);
@@ -29,10 +33,15 @@ void CScene_Title::Enter()
 
 	CButtonUI* m_pStartButton = new CButtonUI;
 	m_pStartButton->SetPos(fPoint(0.f, 0.f));
-	m_pStartButton->SetScale(fPoint(WINSIZEX, WINSIZEY));
+	m_pStartButton->SetScale(fPoint(WINSIZEX, WINSIZEY / 2.f));
 	m_pStartButton->SetClickedCallBack(ClickStartButton, 0, 0);
 	AddObject(m_pStartButton, GROUP_GAMEOBJ::UI);
 
+	CButtonUI* m_pToolButton = new CButtonUI;
+	m_pToolButton->SetPos(fPoint(WINSIZEX / 2.f - 100, WINSIZEY - 100));
+	m_pToolButton->SetScale(fPoint(200, 100));
+	m_pToolButton->SetClickedCallBack(ClickToolButton, 0, 0);
+	AddObject(m_pToolButton, GROUP_GAMEOBJ::UI);
 
 	CImageObject* m_pContinueButton = new CImageObject;
 	m_pContinueButton->Load(L"ContinueImage", L"texture\\Title\\continue.png");

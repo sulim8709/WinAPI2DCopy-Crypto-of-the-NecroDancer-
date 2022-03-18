@@ -11,6 +11,7 @@ CCameraManager::CCameraManager()
 	m_pTargetObj = nullptr;
 	m_fAccTime = m_fTime;
 	m_fSpeed = 0;
+
 }
 
 CCameraManager::~CCameraManager()
@@ -20,6 +21,7 @@ CCameraManager::~CCameraManager()
 
 void CCameraManager::init()
 {
+
 }
 
 void CCameraManager::update()
@@ -57,11 +59,12 @@ void CCameraManager::render()
 	else if (fRatio > 1.f)
 		fRatio = 1.f;
 
-
+	
 	else if (CAM_EFFECT::FADE_IN == effect.m_eEffect)
 		fRatio = 1.f - fRatio;
 
 	CRenderManager::getInst()->RenderFillRectangle(0, 0, WINSIZEX, WINSIZEY, RGB(0, 0, 0), fRatio);
+
 	/*
 	AlphaBlend(hDC
 		, 0, 0

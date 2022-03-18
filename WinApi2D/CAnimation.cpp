@@ -53,7 +53,6 @@ void CAnimation::render()
 {
     CGameObject* pObj = m_pAnimator->GetObj();
     fPoint fptPos = pObj->GetPos();
-    fPoint fptScale = pObj->GetScale();
     tAniFrm frm = m_vecFrm[m_iCurFrm];
 
     fptPos = fptPos + frm.fptOffset;
@@ -64,10 +63,10 @@ void CAnimation::render()
     {
         CRenderManager::getInst()->RenderRevFrame(
             m_pImg,
-            fptPos.x - fptScale.x / 2.f,
-            fptPos.y - fptScale.y / 2.f,
-            fptPos.x + fptScale.x / 2.f,
-            fptPos.y + fptScale.y / 2.f,
+            fptPos.x - frm.fptSlice.x / 2.f,
+            fptPos.y - frm.fptSlice.y / 2.f,
+            fptPos.x + frm.fptSlice.x / 2.f,
+            fptPos.y + frm.fptSlice.y / 2.f,
             frm.fptLT.x,
             frm.fptLT.y,
             frm.fptLT.x + frm.fptSlice.x,
@@ -78,10 +77,10 @@ void CAnimation::render()
     {
         CRenderManager::getInst()->RenderFrame(
             m_pImg,
-            fptPos.x - fptScale.x / 2.f,
-            fptPos.y - fptScale.y / 2.f,
-            fptPos.x + fptScale.x / 2.f,
-            fptPos.y + fptScale.y / 2.f,
+            fptPos.x - frm.fptSlice.x / 2.f,
+            fptPos.y - frm.fptSlice.y / 2.f,
+            fptPos.x + frm.fptSlice.x / 2.f,
+            fptPos.y + frm.fptSlice.y / 2.f,
             frm.fptLT.x,
             frm.fptLT.y,
             frm.fptLT.x + frm.fptSlice.x,

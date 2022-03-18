@@ -152,6 +152,7 @@
     <ClInclude Include="CAnimation.h" />
     <ClInclude Include="CAnimator.h" />
     <ClInclude Include="CBackGround.h" />
+    <ClInclude Include="CBeatNode.h" />
     <ClInclude Include="CButtonUI.h" />
     <ClInclude Include="CCameraManager.h" />
     <ClInclude Include="CCollisionManager.h" />
@@ -160,8 +161,7 @@
     <ClInclude Include="CD2DImage.h" />
     <ClInclude Include="CEventManager.h" />
     <ClInclude Include="CGameObject.h" />
-    <ClInclude Include="CImageButton.h" />
-    <ClInclude Include="CImageObject.h" />
+    <ClInclude Include="CHeartObject.h" />
     <ClInclude Include="CKeyManager.h" />
     <ClInclude Include="CPanelUI.h" />
     <ClInclude Include="CPathManager.h" />
@@ -193,6 +193,7 @@
     <ClCompile Include="CAnimation.cpp" />
     <ClCompile Include="CAnimator.cpp" />
     <ClCompile Include="CBackGround.cpp" />
+    <ClCompile Include="CBeatNode.cpp" />
     <ClCompile Include="CButtonUI.cpp" />
     <ClCompile Include="CCameraManager.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
@@ -201,8 +202,7 @@
     <ClCompile Include="CD2DImage.cpp" />
     <ClCompile Include="CEventManager.cpp" />
     <ClCompile Include="CGameObject.cpp" />
-    <ClCompile Include="CImageButton.cpp" />
-    <ClCompile Include="CImageObject.cpp" />
+    <ClCompile Include="CHeartObject.cpp" />
     <ClCompile Include="CKeyManager.cpp" />
     <ClCompile Include="CPanelUI.cpp" />
     <ClCompile Include="CPathManager.cpp" />

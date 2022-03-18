@@ -47,6 +47,8 @@ enum class GROUP_GAMEOBJ
 	MISSILE_PLAYER,
 	MISSILE_MONSTER,
 
+	NODE,
+	HEART,
 	UI,		// UI는 모든 게임오브젝트 중 최상단 Layer에 위치
 	SIZE,
 };
@@ -54,7 +56,7 @@ enum class GROUP_GAMEOBJ
 enum class GROUP_SCENE
 {
 	TOOL,
-	START,
+	Title,
 	STAGE_01,
 	STAGE_02,
 
@@ -65,21 +67,7 @@ enum class GROUP_TILE
 {
 	NONE,
 	GROUND,
-	PLATFORM,
 	WALL,
-	SLOPE,
-
-	SIZE,
-};
-
-enum class MON_STATE
-{
-	IDLE,
-	PATROL,
-	TRACE,
-	ATT,
-	RUN,
-	DEAD,
 
 	SIZE,
 };

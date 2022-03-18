@@ -132,16 +132,16 @@ void CRenderManager::RenderText(wstring str, float dstX, float dstY, float dstW,
 			fontSize,
 			L"ko",
 			&m_pTextFormat);
+
 		m_pTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
 		m_pTextFormat->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
 	}
-
-	m_pBrush->SetColor(D2D1::ColorF(red / 255.f, green / 255.0f, blue / 255.0f, 1.f));
+	
 	m_pRenderTarget->DrawTextW(str.c_str(), (UINT)str.size(), m_pTextFormat,
 		D2D1::RectF(dstX, dstY, dstW, dstH), m_pBrush);
 }
 
-void CRenderManager::RenderRectangle(float dstX, float dstY, float dstW, float dstH, COLORREF color, float strokeWidth)
+void CRenderManager::RenderRectangle(float dstX, float dstY, float dstW, float dstH, COLORREF color)
 {
 	D2D1_RECT_F m_imgRect = { dstX, dstY, dstW, dstH };
 
@@ -150,7 +150,7 @@ void CRenderManager::RenderRectangle(float dstX, float dstY, float dstW, float d
 	int blue = (color >> 16) & 0xFF;
 
 	m_pBrush->SetColor(D2D1::ColorF(red / 255.f, green / 255.0f, blue / 255.0f, 1.f));
-	m_pRenderTarget->DrawRectangle(m_imgRect, m_pBrush, strokeWidth);
+	m_pRenderTarget->DrawRectangle(m_imgRect, m_pBrush);
 }
 
 void CRenderManager::RenderFillRectangle(float dstX, float dstY, float dstW, float dstH, COLORREF color, float alpha)
@@ -165,7 +165,7 @@ void CRenderManager::RenderFillRectangle(float dstX, float dstY, float dstW, flo
 	m_pRenderTarget->FillRectangle(m_imgRect, m_pBrush);
 }
 
-void CRenderManager::RenderEllipse(float dstX, float dstY, float dstW, float dstH, COLORREF color, float strokeWidth)
+void CRenderManager::RenderEllipse(float dstX, float dstY, float dstW, float dstH, COLORREF color)
 {
 	D2D1_ELLIPSE m_imgRect = { dstX, dstY, dstW, dstH };
 
@@ -174,8 +174,9 @@ void CRenderManager::RenderEllipse(float dstX, float dstY, float dstW, float dst
 	int blue = (color >> 16) & 0xFF;
 
 	m_pBrush->SetColor(D2D1::ColorF(red / 255.f, green / 255.0f, blue / 255.0f, 1.f));
-	m_pRenderTarget->DrawEllipse(m_imgRect, m_pBrush, strokeWidth);
+	m_pRenderTarget->DrawEllipse(m_imgRect, m_pBrush);
 }
+
 
 void CRenderManager::RenderFillEllipse(float dstX, float dstY, float dstW, float dstH, COLORREF color)
 {
