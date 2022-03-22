@@ -4,6 +4,7 @@
 #include "CGameObject.h"
 #include "CHeartObject.h"
 #include "CBeatNode.h"
+#include "CRhythemManager.h"
 
 #include "CD2DImage.h"
 #include "CSound.h"
@@ -24,6 +25,8 @@ void CScene_Stage_01::update()
 
 void CScene_Stage_01::Enter()
 {
+	CRhythemManager::getInst()->Play(0.25f, 0.15f);
+
 	// TEMP Heart Ãß°¡
 	CHeartObject* pHeartObject = new CHeartObject;
 	pHeartObject->SetPos(fPoint(WINSIZEX / 2 - 20.f, WINSIZEY - 60.f));
@@ -31,13 +34,10 @@ void CScene_Stage_01::Enter()
 	AddObject(pHeartObject, GROUP_GAMEOBJ::HEART);
 
 
-
-	//CCollisionManager::getInst()->CheckGroup(GROUP_GAMEOBJ::HEART, GROUP_GAMEOBJ::NOTE);
 }
 
 void CScene_Stage_01::Exit()
 {
 	DeleteAll();
 
-	//CCollisionManager::getInst()->Reset();
 }

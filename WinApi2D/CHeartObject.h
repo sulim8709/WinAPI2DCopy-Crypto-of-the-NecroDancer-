@@ -21,7 +21,5 @@ public:
 	int GetCount();
 	void SetCount(int count);
 
-	//void OnCollisionEnter(CCollider* pOther);
-
 };
 

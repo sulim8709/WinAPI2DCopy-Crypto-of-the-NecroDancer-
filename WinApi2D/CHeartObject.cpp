@@ -16,9 +16,6 @@ CHeartObject::CHeartObject()
 
 	SetName(L"Heart");
 	SetScale(fPoint(123.f, 156.f));
-	//GetCollider()->SetScale(fPoint(120.f, 120.f));
-	//CreateCollider();
-
 
 	CreateAnimator();
 	GetAnimator()->CreateAnimation(L"HeartBeat", m_pImg, fPoint(0.f, 0.f), fPoint(41.f, 52.f), fPoint(41.f, 0.f), 0.31f, 2, false);
@@ -95,10 +92,5 @@ void CHeartObject::SetCount(int count)
 {
 	m_count = count;
 }
-
-//void CHeartObject::OnCollisionEnter(CCollider* pOther)
-//{
-//	CGameObject* pOtherObj = pOther->GetObj();
-//}
 
 

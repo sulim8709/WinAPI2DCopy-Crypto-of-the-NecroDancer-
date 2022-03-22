@@ -82,6 +82,12 @@
     <Filter Include="Object\SceneObject\StageObject">
       <UniqueIdentifier>{cdbd2571-1f36-44e7-9b62-2376e83eea04}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rhythem">
+      <UniqueIdentifier>{e545b9d5-3350-4abb-a90f-e61eb0a083cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Text">
+      <UniqueIdentifier>{f9e83f9b-9819-4aa5-a751-8968ddfad539}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -207,6 +213,18 @@
     <ClInclude Include="CImageObject.h">
       <Filter>Object\SceneObject\TitleObject</Filter>
     </ClInclude>
+    <ClInclude Include="CRhythemManager.h">
+      <Filter>Rhythem</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>Object\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="CMonster.h">
+      <Filter>Object\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="CMissedText.h">
+      <Filter>Object\Text</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinApi2D.cpp">
@@ -313,6 +331,18 @@
     </ClCompile>
     <ClCompile Include="CImageObject.cpp">
       <Filter>Object\SceneObject\TitleObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CRhythemManager.cpp">
+      <Filter>Rhythem</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>Object\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>Object\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="CMissedText.cpp">
+      <Filter>Object\Text</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

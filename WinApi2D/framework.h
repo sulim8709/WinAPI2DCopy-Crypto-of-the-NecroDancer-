@@ -47,6 +47,7 @@ enum class GROUP_GAMEOBJ
 	MISSILE_PLAYER,
 	MISSILE_MONSTER,
 
+	MISSED_TEXT,
 	NODE,
 	HEART,
 	UI,		// UI는 모든 게임오브젝트 중 최상단 Layer에 위치
