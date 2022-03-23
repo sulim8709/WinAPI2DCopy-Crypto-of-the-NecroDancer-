@@ -15,10 +15,9 @@ CHeartObject::CHeartObject()
 	m_count = 0;
 
 	SetName(L"Heart");
-	SetScale(fPoint(123.f, 156.f));
 
 	CreateAnimator();
-	GetAnimator()->CreateAnimation(L"HeartBeat", m_pImg, fPoint(0.f, 0.f), fPoint(41.f, 52.f), fPoint(41.f, 0.f), 0.31f, 2, false);
+	GetAnimator()->CreateAnimation(L"HeartBeat", m_pImg, fPoint(0.f, 0.f), fPoint(82.f, 104.f), fPoint(82.f, 0.f), 0.31f, 2, false);
 	CAnimation* pAni;
 	pAni = GetAnimator()->FindAnimation(L"HeartBeat");
 	pAni->GetFrame(1).fDuration = 0.19f;

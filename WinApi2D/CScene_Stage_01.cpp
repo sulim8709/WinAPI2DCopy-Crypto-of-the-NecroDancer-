@@ -5,6 +5,7 @@
 #include "CHeartObject.h"
 #include "CBeatNode.h"
 #include "CRhythemManager.h"
+#include "CPlayer.h"
 
 #include "CD2DImage.h"
 #include "CSound.h"
@@ -33,7 +34,9 @@ void CScene_Stage_01::Enter()
 	pHeartObject->SetScale(fPoint(123.f, 156.f));
 	AddObject(pHeartObject, GROUP_GAMEOBJ::HEART);
 
-
+	CPlayer* pPlayer = new CPlayer;
+	pPlayer->SetPos(fPoint(500, 500));
+	AddObject(pPlayer, GROUP_GAMEOBJ::PLAYER);
 }
 
 void CScene_Stage_01::Exit()
