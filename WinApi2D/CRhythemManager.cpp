@@ -19,6 +19,8 @@ void CRhythemManager::update()
 	{
 		m_fAccTime -= m_fOneBit;
 	}
+
+
 }
 
 void CRhythemManager::Play(float oneBit, float hitTime)
@@ -33,6 +35,7 @@ bool CRhythemManager::Success()
 	{
 		return true;
 	}
+
 	return false;
 }
 

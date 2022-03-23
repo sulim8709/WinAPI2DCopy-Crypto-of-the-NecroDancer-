@@ -26,6 +26,7 @@ void CCore::update()
 	CCollisionManager::getInst()->update();
 	CCameraManager::getInst()->update();
 	CUIManager::getInst()->update();
+	CRhythemManager::getInst()->update();
 }
 
 void CCore::render()

@@ -99,6 +99,7 @@ enum class TYPE_EVENT
 #include "CUIManager.h"
 #include "CSoundManager.h"
 #include "CRenderManager.h"
+#include "CRhythemManager.h"
 
 //========================================
 //##			디파인문				##

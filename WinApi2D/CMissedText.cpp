@@ -5,7 +5,7 @@ CMissedText::CMissedText()
 {
 	m_pImg = CResourceManager::getInst()->LoadD2DImage(L"Missed", L"texture\\Text\\TEMP_missed.png");
 	SetName(L"Missed");
-
+	SetScale(fPoint(36, 13));
 	m_fvDir = fVec2(0, 0);
 }
 
@@ -27,7 +27,7 @@ void CMissedText::update()
 
 	SetPos(pos);
 
-	if (pos.y < WINSIZEY - 100.f)
+	if (pos.y < WINSIZEY - 150.f)
 		DeleteObj(this);
 }
 
