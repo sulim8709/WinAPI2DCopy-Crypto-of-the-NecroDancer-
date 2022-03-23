@@ -18,6 +18,7 @@ void CPlayer::CreateMissedText()
 
 CPlayer::CPlayer()
 {
+	m_bAcctive = false;
 	CD2DImage* m_pImgHead = CResourceManager::getInst()->LoadD2DImage(L"PlayerHeadImg", L"texture\\Character\\player1_heads.png");
 	CD2DImage* m_pImgBody = CResourceManager::getInst()->LoadD2DImage(L"PlayerBodyImg", L"texture\\Character\\player1_armor_body.png");
 	
@@ -52,32 +53,110 @@ void CPlayer::update()
 {
 	fPoint pos = GetPos();
 
-	if (CRhythemManager::getInst()->Success())			// 타이밍 맞게 눌렀을 때
-	{
-		if (KeyDown(VK_UP))
-		{
 
-			// TODO :: 위로 올라가는 행동 구현
-			pos.y -= 50.f;
-			//GetAnimator()->Play(L"RightHeadMove");
-			GetAnimator()->Play(L"RightBodyMove");
-		}
-		else if (KeyDown(VK_DOWN))
+	
+	if (KeyDown(VK_UP))
+	{
+		if (CRhythemManager::getInst()->Success())			// 타이밍 맞게 눌렀을 때
 		{
-			pos.y += 50.f;
+			if (false == m_bAcctive)
+			{
+				// TODO :: 위로 올라가는 행동 구현
+				pos.y -= 50.f;
 				//GetAnimator()->Play(L"RightHeadMove");
 				GetAnimator()->Play(L"RightBodyMove");
+				m_bAcctive = true;
+			}
 		}
-
+		else												// 타이밍 틀리게 눌렀을 때
+		{
+			if (false == m_bAcctive)
+			{
+				CreateMissedText();
+				m_bAcctive = true;
+				// TODO :: 하트 오브젝트 가운데에서 빗나감 글씨 출력
+			}
+		}
 	}
-	else												// 타이밍 틀리게 눌렀을 때
+	else if (KeyDown(VK_DOWN))
 	{
-		CreateMissedText();
-		// TODO :: 하트 오브젝트 가운데에서 빗나감 글씨 출력
-	};
-	SetPos(pos);
+		if (CRhythemManager::getInst()->Success())			// 타이밍 맞게 눌렀을 때
+		{
+			if (false == m_bAcctive)
+			{
+				// TODO :: 위로 올라가는 행동 구현
+				pos.y += 50.f;
+				//GetAnimator()->Play(L"RightHeadMove");
+				GetAnimator()->Play(L"RightBodyMove");
+				m_bAcctive = true;
+			}
+		}
+		else												// 타이밍 틀리게 눌렀을 때
+		{
+			if (false == m_bAcctive)
+			{
+				CreateMissedText();
+				m_bAcctive = true;
+				// TODO :: 하트 오브젝트 가운데에서 빗나감 글씨 출력
+			}
+		}
+	}
+	else if (KeyDown(VK_LEFT))
+	{
+		if (CRhythemManager::getInst()->Success())			// 타이밍 맞게 눌렀을 때
+		{
+			if (false == m_bAcctive)
+			{
+				// TODO :: 위로 올라가는 행동 구현
+				pos.x -= 50.f;
+				//GetAnimator()->Play(L"RightHeadMove");
+				GetAnimator()->Play(L"RightBodyMove");
+				m_bAcctive = true;
+			}
+		}
+		else												// 타이밍 틀리게 눌렀을 때
+		{
+			if (false == m_bAcctive)
+			{
+				CreateMissedText();
+				m_bAcctive = true;
+				// TODO :: 하트 오브젝트 가운데에서 빗나감 글씨 출력
+			}
+		}
+	}
+	else if (KeyDown(VK_RIGHT))
+	{
+		if (CRhythemManager::getInst()->Success())			// 타이밍 맞게 눌렀을 때
+		{
+			if (false == m_bAcctive)
+			{
+				// TODO :: 위로 올라가는 행동 구현
+				pos.x += 50.f;
+				//GetAnimator()->Play(L"RightHeadMove");
+				GetAnimator()->Play(L"RightBodyMove");
+				m_bAcctive = true;
+			}
+		}
+		else												// 타이밍 틀리게 눌렀을 때
+		{
+			if (false == m_bAcctive)
+			{
+				CreateMissedText();
+				m_bAcctive = true;
+				// TODO :: 하트 오브젝트 가운데에서 빗나감 글씨 출력
+			}
+		}
+	}
+	
 
+	if (CRhythemManager::getInst()->OneBit())
+	{
+		m_bAcctive = false;
+	}
+
+	SetPos(pos);
 }
+
 
 
 void CPlayer::render()

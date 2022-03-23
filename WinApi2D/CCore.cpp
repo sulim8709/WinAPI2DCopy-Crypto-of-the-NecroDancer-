@@ -38,6 +38,8 @@ void CCore::render()
 	CSceneManager::getInst()->render();
 	CCameraManager::getInst()->render();
 
+	CRhythemManager::getInst()->render();
+
 	// 오른쪽 상단에 FPS 표시
 	WCHAR strFPS[6];
 	swprintf_s(strFPS, L"%5d", CTimeManager::getInst()->GetFPS());

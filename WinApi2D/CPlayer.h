@@ -5,7 +5,7 @@ class CPlayer : public CGameObject
 private:
 
 	void CreateMissedText();
-
+	bool m_bAcctive;
 public:
 	CPlayer();
 	virtual ~CPlayer();
@@ -16,5 +16,6 @@ public:
 
 	virtual void update();
 
+	
 };
 

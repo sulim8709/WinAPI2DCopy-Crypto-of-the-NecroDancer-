@@ -1,5 +1,6 @@
 #include "framework.h"
 #include "CMissedText.h"
+#include "CRhythemManager.h"
 
 CMissedText::CMissedText()
 {
@@ -20,15 +21,15 @@ CMissedText* CMissedText::Clone()
 
 void CMissedText::update()
 {
-	fPoint pos = GetPos();
+		fPoint pos = GetPos();
 
-	pos.x += m_fSpeed * m_fvDir.x * fDT;
-	pos.y += m_fSpeed * m_fvDir.y * fDT;
+		pos.x += m_fSpeed * m_fvDir.x * fDT;
+		pos.y += m_fSpeed * m_fvDir.y * fDT;
 
-	SetPos(pos);
+		SetPos(pos);
 
-	if (pos.y < WINSIZEY - 150.f)
-		DeleteObj(this);
+		if (pos.y < WINSIZEY - 150.f)
+			DeleteObj(this);
 }
 
 void CMissedText::render()

@@ -4,7 +4,7 @@
 
 void CMonster::update()
 {
-	if (CRhythemManager::getInst()->IsMonsterMove())
+	if (CRhythemManager::getInst()->Absolute())
 	{
 
 	}

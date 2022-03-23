@@ -26,7 +26,8 @@ void CScene_Stage_01::update()
 
 void CScene_Stage_01::Enter()
 {
-	CRhythemManager::getInst()->Play(1.f, 0.2f);
+	CRhythemManager::getInst()->Play(2.f, 0.5f);
+
 
 	// TEMP Heart Ãß°¡
 	CHeartObject* pHeartObject = new CHeartObject;
@@ -37,6 +38,8 @@ void CScene_Stage_01::Enter()
 	CPlayer* pPlayer	 = new CPlayer;
 	pPlayer->SetPos(fPoint(500, 500));
 	AddObject(pPlayer, GROUP_GAMEOBJ::PLAYER);
+
+	CRhythemManager::getInst()->render();
 }
 
 void CScene_Stage_01::Exit()
