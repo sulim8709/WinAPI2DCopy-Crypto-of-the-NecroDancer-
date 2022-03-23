@@ -10,6 +10,7 @@
 #include "CD2DImage.h"
 #include "CSound.h"
 
+
 CScene_Stage_01::CScene_Stage_01()
 {
 	
@@ -26,7 +27,10 @@ void CScene_Stage_01::update()
 
 void CScene_Stage_01::Enter()
 {
-	CRhythemManager::getInst()->Play(2.f, 0.5f);
+	CSoundManager::getInst()->AddSound(L"Stage01BGM", L"sound\\stage\\zone1_1.ogg", false);
+	CSoundManager::getInst()->Play(L"Stage01BGM");
+
+	CRhythemManager::getInst()->Play(0.5f, 0.1f);
 
 
 	// TEMP Heart Ãß°¡

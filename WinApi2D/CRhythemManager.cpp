@@ -21,10 +21,10 @@ void CRhythemManager::update()
         m_bAbsolute = false;
         m_bOneBit = true;
     }
-    /*else
+    else
     {
         m_bOneBit = false;
-    }*/
+    }
 }
 
 void CRhythemManager::render()
