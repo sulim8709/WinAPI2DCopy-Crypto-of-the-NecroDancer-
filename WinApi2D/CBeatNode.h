@@ -9,6 +9,7 @@ private:
 
 
 
+
 public:
 	CBeatNode();
 	virtual ~CBeatNode();

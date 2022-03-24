@@ -4,10 +4,10 @@ class CRhythemManager
 	SINGLETON(CRhythemManager);
 
 private:
-	double m_dOneBit;		// 한 비트 당 시간
-	double m_dAccTime;		// 누적 시간
-	double m_dHitTime;		// 눌렀을 떄 시간
-	double m_dHalfBit;
+	float m_fOneBit;		// 한 비트 당 시간
+	float m_fAccTime;		// 누적 시간
+	float m_fHitTime;		// 눌렀을 떄 시간
+	float m_fHalfBit;
 	bool m_bAbsolute;
 	bool m_bOneBit;
 
@@ -22,9 +22,10 @@ public:
 
 	float GetAccTime();
 	bool OneBit();
-	double GetTiming();
-	double GetFalseTiming();
-	double GetOnebit();
+	float GetTiming();
+	float GetFalseTiming();
+	float GetOnebit();
+	float GetHalfBit();
 
 };
 

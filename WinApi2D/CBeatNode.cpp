@@ -13,8 +13,9 @@ CBeatNode::CBeatNode()
 	SetScale(fPoint(12.f, 64.f));
 	m_fvDir = fVec2(0, 0);
 
-	double OnebitTime = CRhythemManager::getInst()->GetTiming();
-	m_fSpeed = WINSIZEX / 2 / OnebitTime;
+	float fTime = CRhythemManager::getInst()->GetHalfBit();
+	m_fSpeed = (((WINSIZEX / 2.f) + 62.f ) / fTime) / 8;
+
 }
 
 CBeatNode::~CBeatNode()
@@ -38,9 +39,6 @@ void CBeatNode::update()
 	if (pos.x > WINSIZEX / 2 - 2.f && pos.x < WINSIZEX / 2 + 2.f)
 		DeleteObj(this);
 
-	CPlayer* pPlayer = new CPlayer;
-	if (pPlayer->GetAcctive())
-		DeleteObj(this);
 	
 }
 

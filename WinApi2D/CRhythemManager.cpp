@@ -3,8 +3,12 @@
 
 CRhythemManager::CRhythemManager()
 {
-    m_dAccTime = 0;
-    m_bOneBit = false;
+    m_fOneBit =0;		
+    m_fAccTime = 0;		
+    m_fHitTime = 0;		
+    m_fHalfBit = 0;
+    m_bAbsolute = 0;
+    m_bOneBit = 0;
 }
 
 CRhythemManager::~CRhythemManager()
@@ -14,11 +18,11 @@ CRhythemManager::~CRhythemManager()
 
 void CRhythemManager::update()
 {
-    m_dAccTime += DT;
+    m_fAccTime += DT;
 
-    if (m_dAccTime > m_dOneBit)
+    if (m_fAccTime > m_fOneBit)
     {
-        m_dAccTime -= m_dOneBit;
+        m_fAccTime -= m_fOneBit;
         m_bAbsolute = false;
         m_bOneBit = true;
     }
@@ -31,9 +35,9 @@ void CRhythemManager::update()
 void CRhythemManager::render()
 {
     UINT BAR_SIZE = WINSIZEX;
-    float thick = m_dAccTime / m_dOneBit;
-    float minTiming = (m_dHalfBit - m_dHitTime) / m_dOneBit;
-    float maxTiming = (m_dHalfBit + m_dHitTime) / m_dOneBit;
+    float thick = m_fAccTime / m_fOneBit;
+    float minTiming = (m_fHalfBit - m_fHitTime) / m_fOneBit;
+    float maxTiming = (m_fHalfBit + m_fHitTime) / m_fOneBit;
 
     CRenderManager::getInst()->RenderRectangle(0, 0, BAR_SIZE, 30);
     CRenderManager::getInst()->RenderFillRectangle(BAR_SIZE * minTiming, 0, BAR_SIZE * maxTiming, 30, RGB(0, 255, 0));
@@ -43,15 +47,15 @@ void CRhythemManager::render()
 
 void CRhythemManager::Play(float oneBit, float hitTime)
 {
-    m_dOneBit = oneBit;
-    m_dHalfBit = oneBit / 2.f;
-    m_dHitTime = hitTime;
+    m_fOneBit = oneBit;
+    m_fHalfBit = oneBit / 2.f;
+    m_fHitTime = hitTime;
 }
 
 bool CRhythemManager::Success()
 {
-    if (m_dAccTime > m_dHalfBit - m_dHitTime &&
-        m_dAccTime < m_dHalfBit + m_dHitTime)
+    if (m_fAccTime > m_fHalfBit - m_fHitTime &&
+        m_fAccTime < m_fHalfBit + m_fHitTime)
     {
         return true;
     }
@@ -63,7 +67,7 @@ bool CRhythemManager::Success()
 
 bool CRhythemManager::Absolute()
 {
-    if (m_dAccTime > m_dHalfBit && false == m_bAbsolute)
+    if (m_fAccTime > m_fHalfBit && false == m_bAbsolute)
     {
         m_bAbsolute = true;
         return true;
@@ -76,7 +80,7 @@ bool CRhythemManager::Absolute()
 
 float CRhythemManager::GetAccTime()
 {
-    return m_dAccTime;
+    return m_fAccTime;
 }
 
 bool CRhythemManager::OneBit()
@@ -84,18 +88,23 @@ bool CRhythemManager::OneBit()
     return m_bOneBit;
 }
 
-double CRhythemManager::GetTiming()
+float CRhythemManager::GetTiming()
 {
-    return m_dHitTime * 2;
+    return m_fHitTime * 2;
 }
 
-double CRhythemManager::GetFalseTiming()
+float CRhythemManager::GetFalseTiming()
 {
-    return m_dOneBit - (m_dHitTime * 2);
+    return m_fOneBit - (m_fHitTime * 2);
 }
 
-double CRhythemManager::GetOnebit()
+float CRhythemManager::GetOnebit()
 {
-    return m_dOneBit;
+    return m_fOneBit;
+}
+
+float CRhythemManager::GetHalfBit()
+{
+    return m_fHalfBit;
 }
 

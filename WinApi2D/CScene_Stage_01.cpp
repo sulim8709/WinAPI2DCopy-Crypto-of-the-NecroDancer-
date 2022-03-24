@@ -39,6 +39,10 @@ void CScene_Stage_01::Enter()
 	pHeartObject->SetScale(fPoint(123.f, 156.f));
 	AddObject(pHeartObject, GROUP_GAMEOBJ::HEART);
 
+
+	
+
+
 	CPlayer* pPlayer	 = new CPlayer;
 	pPlayer->SetPos(fPoint(500, 500));
 	AddObject(pPlayer, GROUP_GAMEOBJ::PLAYER);
