@@ -3,7 +3,8 @@
 
 CRhythemManager::CRhythemManager()
 {
-
+    m_dAccTime = 0;
+    m_bOneBit = false;
 }
 
 CRhythemManager::~CRhythemManager()
@@ -82,3 +83,19 @@ bool CRhythemManager::OneBit()
 {
     return m_bOneBit;
 }
+
+double CRhythemManager::GetTiming()
+{
+    return m_dHitTime * 2;
+}
+
+double CRhythemManager::GetFalseTiming()
+{
+    return m_dOneBit - (m_dHitTime * 2);
+}
+
+double CRhythemManager::GetOnebit()
+{
+    return m_dOneBit;
+}
+

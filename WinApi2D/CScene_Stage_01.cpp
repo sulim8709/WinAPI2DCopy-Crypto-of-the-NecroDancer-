@@ -30,12 +30,12 @@ void CScene_Stage_01::Enter()
 	CSoundManager::getInst()->AddSound(L"Stage01BGM", L"sound\\stage\\zone1_1.ogg", false);
 	CSoundManager::getInst()->Play(L"Stage01BGM");
 
-	CRhythemManager::getInst()->Play(0.5f, 0.1f);
+	CRhythemManager::getInst()->Play(0.6f, 0.18f);
 
 
 	// TEMP Heart Ãß°¡
 	CHeartObject* pHeartObject = new CHeartObject;
-	pHeartObject->SetPos(fPoint(WINSIZEX / 2 - 20.f, WINSIZEY - 60.f));
+	pHeartObject->SetPos(fPoint(WINSIZEX / 2, WINSIZEY - 60.f));
 	pHeartObject->SetScale(fPoint(123.f, 156.f));
 	AddObject(pHeartObject, GROUP_GAMEOBJ::HEART);
 

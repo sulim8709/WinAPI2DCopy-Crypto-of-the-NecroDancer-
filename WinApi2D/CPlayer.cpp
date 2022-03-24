@@ -9,7 +9,7 @@ void CPlayer::CreateMissedText()
 {
 
 	CMissedText* pMissedText = new CMissedText;
-	pMissedText->SetPos(fPoint(WINSIZEX / 2 - 41.f, WINSIZEY - 60.f));
+	pMissedText->SetPos(fPoint(WINSIZEX / 2 - 20.f, WINSIZEY - 60.f));
 	pMissedText->SetDir(fVec2(0, -1));
 	pMissedText->SetName(L"Missed_Text");
 
@@ -157,7 +157,10 @@ void CPlayer::update()
 	SetPos(pos);
 }
 
-
+bool CPlayer::GetAcctive()
+{
+	return m_bAcctive;
+}
 
 void CPlayer::render()
 {

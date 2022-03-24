@@ -22,5 +22,9 @@ public:
 
 	float GetAccTime();
 	bool OneBit();
+	double GetTiming();
+	double GetFalseTiming();
+	double GetOnebit();
+
 };
 

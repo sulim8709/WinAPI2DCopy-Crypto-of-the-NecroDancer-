@@ -1,20 +1,20 @@
 #include "framework.h"
+
 #include "CBeatNode.h"
+#include "CPlayer.h"
+
 #include "CCollider.h"
 #include "CD2DImage.h"
 
 CBeatNode::CBeatNode()
 {
-	m_pImg = CResourceManager::getInst()->LoadD2DImage(L"NodeGreenTex", L"texture\\gui\\TEMP_beat_marker_green.png");
+	m_pImg = CResourceManager::getInst()->LoadD2DImage(L"NodeGreenTex", L"texture\\gui\\TEMP_beat_marker.png");
 	SetName(L"NodeGreen");
-	SetScale(fPoint(6.f, 32.f));
+	SetScale(fPoint(12.f, 64.f));
 	m_fvDir = fVec2(0, 0);
 
-	//GetCollider()->SetScale(fPoint(120.f, 120.f));
-	//CreateCollider();
-
-
-	
+	double OnebitTime = CRhythemManager::getInst()->GetTiming();
+	m_fSpeed = WINSIZEX / 2 / OnebitTime;
 }
 
 CBeatNode::~CBeatNode()
@@ -26,16 +26,6 @@ CBeatNode* CBeatNode::Clone()
 	return new CBeatNode(*this);
 }
 
-void CBeatNode::render()
-{
-	fPoint pos = GetPos();
-	fPoint scale = GetScale();
-	pos = CCameraManager::getInst()->GetRenderPos(pos);
-
-
-	component_render();
-}
-
 void CBeatNode::update()
 {
 	fPoint pos = GetPos();
@@ -45,8 +35,29 @@ void CBeatNode::update()
 
 	SetPos(pos);
 
-	if (pos.x > WINSIZEX / 2 - 38.f)
+	if (pos.x > WINSIZEX / 2 - 2.f && pos.x < WINSIZEX / 2 + 2.f)
 		DeleteObj(this);
+
+	CPlayer* pPlayer = new CPlayer;
+	if (pPlayer->GetAcctive())
+		DeleteObj(this);
+	
+}
+
+void CBeatNode::render()
+{
+	fPoint pos = GetPos();
+	fPoint scale = GetScale();
+
+	fPoint renderPos = CCameraManager::getInst()->GetRenderPos(pos);
+
+	CRenderManager::getInst()->RenderImage(
+		m_pImg,
+		renderPos.x,
+		renderPos.y,
+		renderPos.x + scale.x,
+		renderPos.y + scale.y
+	);
 }
 
 void CBeatNode::SetDir(fVec2 vec)
@@ -54,10 +65,10 @@ void CBeatNode::SetDir(fVec2 vec)
 	m_fvDir = vec.normalize();
 }
 
-void CBeatNode::SetDir(float theta)
+void CBeatNode::Load(const wstring& strKey, const wstring& strRelativePath)
 {
-	m_fvDir.x = (float)cos(theta);
-	m_fvDir.y = (float)sin(theta);
+	m_pImg = CResourceManager::getInst()->LoadD2DImage(strKey, strRelativePath);
 }
+
 
 

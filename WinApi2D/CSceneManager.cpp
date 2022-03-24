@@ -56,7 +56,7 @@ void CSceneManager::init()
 	m_arrScene[(size_t)GROUP_SCENE::STAGE_01] = new CScene_Stage_01;
 	m_arrScene[(size_t)GROUP_SCENE::STAGE_01]->SetName(L"Stage_01_Scene");
 
-	m_pCurScene = m_arrScene[(size_t)GROUP_SCENE::STAGE_01];
+	m_pCurScene = m_arrScene[(size_t)GROUP_SCENE::Title];
 	m_pCurScene->Enter();
 }
 

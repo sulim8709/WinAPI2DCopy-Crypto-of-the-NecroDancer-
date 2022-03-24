@@ -16,6 +16,7 @@ public:
 
 	virtual void update();
 
+	bool GetAcctive();
 	
 };
 
