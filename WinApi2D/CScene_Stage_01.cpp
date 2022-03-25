@@ -30,7 +30,7 @@ void CScene_Stage_01::Enter()
 	CSoundManager::getInst()->AddSound(L"Stage01BGM", L"sound\\stage\\zone1_1.ogg", false);
 	CSoundManager::getInst()->Play(L"Stage01BGM");
 
-	CRhythemManager::getInst()->Play(0.6f, 0.18f);
+	CRhythemManager::getInst()->Play(1.f, 0.3f);
 
 
 	// TEMP Heart Ãß°¡

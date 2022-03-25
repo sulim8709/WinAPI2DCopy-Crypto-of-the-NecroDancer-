@@ -20,6 +20,9 @@ void CRhythemManager::update()
 {
     m_fAccTime += DT;
 
+    if (0 == m_fOneBit)
+        m_fAccTime = 0;
+
     if (m_fAccTime > m_fOneBit)
     {
         m_fAccTime -= m_fOneBit;
