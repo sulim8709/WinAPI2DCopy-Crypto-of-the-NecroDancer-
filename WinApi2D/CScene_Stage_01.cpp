@@ -5,7 +5,8 @@
 #include "CHeartObject.h"
 #include "CBeatNode.h"
 #include "CRhythemManager.h"
-#include "CPlayer.h"
+#include "CPlayerHead.h"
+#include "CPlayerBody.h"
 
 #include "CD2DImage.h"
 #include "CSound.h"
@@ -43,9 +44,12 @@ void CScene_Stage_01::Enter()
 	
 
 
-	CPlayer* pPlayer	 = new CPlayer;
-	pPlayer->SetPos(fPoint(500, 500));
-	AddObject(pPlayer, GROUP_GAMEOBJ::PLAYER);
+	CPlayerHead* pPlayerHead = new CPlayerHead;
+	pPlayerHead->SetPos(fPoint(500.f, 500.f));
+	AddObject(pPlayerHead, GROUP_GAMEOBJ::PLAYER);
+	CPlayerBody* pPlayerBody = new CPlayerBody;
+	pPlayerBody->SetPos(fPoint(500.f, 500.f));
+	AddObject(pPlayerBody, GROUP_GAMEOBJ::PLAYER);
 
 	CRhythemManager::getInst()->render();
 }

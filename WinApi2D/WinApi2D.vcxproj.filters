@@ -88,6 +88,9 @@
     <Filter Include="Engine\Rhythem">
       <UniqueIdentifier>{e545b9d5-3350-4abb-a90f-e61eb0a083cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Character\Player">
+      <UniqueIdentifier>{bcaacd69-834b-4420-b3fd-dc4d58869d23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -216,14 +219,17 @@
     <ClInclude Include="CRhythemManager.h">
       <Filter>Engine\Rhythem</Filter>
     </ClInclude>
-    <ClInclude Include="CPlayer.h">
-      <Filter>Object\Character</Filter>
-    </ClInclude>
     <ClInclude Include="CMonster.h">
       <Filter>Object\Character</Filter>
     </ClInclude>
     <ClInclude Include="CMissedText.h">
       <Filter>Object\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerBody.h">
+      <Filter>Object\Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerHead.h">
+      <Filter>Object\Character\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -335,14 +341,17 @@
     <ClCompile Include="CRhythemManager.cpp">
       <Filter>Engine\Rhythem</Filter>
     </ClCompile>
-    <ClCompile Include="CPlayer.cpp">
-      <Filter>Object\Character</Filter>
-    </ClCompile>
     <ClCompile Include="CMonster.cpp">
       <Filter>Object\Character</Filter>
     </ClCompile>
     <ClCompile Include="CMissedText.cpp">
       <Filter>Object\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerBody.cpp">
+      <Filter>Object\Character\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerHead.cpp">
+      <Filter>Object\Character\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

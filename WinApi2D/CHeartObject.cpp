@@ -82,7 +82,7 @@ CHeartObject::CHeartObject()
 	CAnimation* pAni;
 	pAni = GetAnimator()->FindAnimation(L"HeartBeat");
 	pAni->GetFrame(1).fDuration = HeartBigTime;
-	
+
 
 	GetAnimator()->Play(L"HeartBeat");
 }

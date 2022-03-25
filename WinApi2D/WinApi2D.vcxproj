@@ -169,7 +169,8 @@
     <ClInclude Include="CMonster.h" />
     <ClInclude Include="CPanelUI.h" />
     <ClInclude Include="CPathManager.h" />
-    <ClInclude Include="CPlayer.h" />
+    <ClInclude Include="CPlayerBody.h" />
+    <ClInclude Include="CPlayerHead.h" />
     <ClInclude Include="CRenderManager.h" />
     <ClInclude Include="CResource.h" />
     <ClInclude Include="CResourceManager.h" />
@@ -216,7 +217,8 @@
     <ClCompile Include="CMonster.cpp" />
     <ClCompile Include="CPanelUI.cpp" />
     <ClCompile Include="CPathManager.cpp" />
-    <ClCompile Include="CPlayer.cpp" />
+    <ClCompile Include="CPlayerBody.cpp" />
+    <ClCompile Include="CPlayerHead.cpp" />
     <ClCompile Include="CRenderManager.cpp" />
     <ClCompile Include="CResource.cpp" />
     <ClCompile Include="CResourceManager.cpp" />

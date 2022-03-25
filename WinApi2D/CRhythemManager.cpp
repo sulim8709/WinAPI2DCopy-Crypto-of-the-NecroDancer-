@@ -3,7 +3,7 @@
 
 CRhythemManager::CRhythemManager()
 {
-    m_fOneBit =0;		
+    m_fOneBit = 0;		
     m_fAccTime = 0;		
     m_fHitTime = 0;		
     m_fHalfBit = 0;
@@ -18,7 +18,7 @@ CRhythemManager::~CRhythemManager()
 
 void CRhythemManager::update()
 {
-    m_fAccTime += DT;
+    m_fAccTime += fDT;
 
     if (0 == m_fOneBit)
         m_fAccTime = 0;
