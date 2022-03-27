@@ -45,7 +45,7 @@ protected:
 	~SingleTon() {};
 
 public:
-	static T* GetInst()
+	static T* getInst()
 	{
 		//싱글톤 객체가 없으면 새로 만들어 전달.
 		if (nullptr == _instance)
