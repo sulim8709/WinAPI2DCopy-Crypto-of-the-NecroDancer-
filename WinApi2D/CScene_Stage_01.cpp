@@ -37,7 +37,7 @@ void CScene_Stage_01::Enter()
 	// TEMP Heart Ãß°¡
 	CHeartObject* pHeartObject = new CHeartObject;
 	pHeartObject->SetPos(fPoint(WINSIZEX / 2, WINSIZEY - 60.f));
-	pHeartObject->SetScale(fPoint(123.f, 156.f));
+	pHeartObject->SetScale(fPoint(82.f, 104.f));
 	AddObject(pHeartObject, GROUP_GAMEOBJ::HEART);
 
 
@@ -52,6 +52,7 @@ void CScene_Stage_01::Enter()
 	AddObject(pPlayerBody, GROUP_GAMEOBJ::PLAYER);
 
 	CRhythemManager::getInst()->render();
+
 }
 
 void CScene_Stage_01::Exit()

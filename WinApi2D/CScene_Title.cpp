@@ -10,15 +10,37 @@ void ClickStartButton(DWORD_PTR, DWORD_PTR)
 	ChangeScn(GROUP_SCENE::STAGE_01);
 	CSoundManager::getInst()->Stop(L"TitleBGM");
 }
+
 void ClickToolButton(DWORD_PTR, DWORD_PTR)
 {
 	ChangeScn(GROUP_SCENE::TOOL);
 	CSoundManager::getInst()->Stop(L"TitleBGM");
 }
-void ClickExitButton(DWORD_PTR, DWORD_PTR)
+
+CScene_Title::CScene_Title()
 {
-	PostQuitMessage(0);
 }
+
+CScene_Title::~CScene_Title()
+{
+}
+
+void CScene_Title::update()
+{
+
+	if (KeyDown(VK_RETURN))
+	{
+		ChangeScn(GROUP_SCENE::STAGE_01);
+		CSoundManager::getInst()->Stop(L"TitleBGM");
+	}
+
+	if (KeyDown(VK_TAB))
+	{
+		ChangeScn(GROUP_SCENE::TOOL);
+		CSoundManager::getInst()->Stop(L"TitleBGM");
+	}
+}
+
 
 void CScene_Title::Enter()
 {
@@ -34,22 +56,18 @@ void CScene_Title::Enter()
 	m_pTitleImage->SetScale(fPoint(WINSIZEX, WINSIZEY));
 	AddObject(m_pTitleImage, GROUP_GAMEOBJ::BACKGROUND);
 
-
-	// Start 버튼
-	CButtonUI* m_pStartButton = new CButtonUI;
+	CImageButton* m_pToolButton = new CImageButton;
+	m_pToolButton->SetPos(fPoint(WINSIZEX / 2 - 100.f, WINSIZEY - 200.f));
+	m_pToolButton->SetScale(fPoint(200, 100));
+	m_pToolButton->SetText(L"Tool Button");
+	m_pToolButton->SetClickedCallBack(ClickToolButton, 0, 0);
+	AddObject(m_pToolButton, GROUP_GAMEOBJ::UI);
+	
+	CImageButton* m_pStartButton = new CImageButton;
 	m_pStartButton->SetPos(fPoint(0.f, 0.f));
 	m_pStartButton->SetScale(fPoint(WINSIZEX, WINSIZEY / 2.f));
 	m_pStartButton->SetClickedCallBack(ClickStartButton, 0, 0);
 	AddObject(m_pStartButton, GROUP_GAMEOBJ::UI);
-
-
-	// Tool 버튼
-	CButtonUI* m_pToolButton = new CButtonUI;
-	m_pToolButton->SetPos(fPoint(WINSIZEX / 2.f - 100, WINSIZEY - 100));
-	m_pToolButton->SetScale(fPoint(200, 100));
-	m_pToolButton->SetClickedCallBack(ClickToolButton, 0, 0);
-	AddObject(m_pToolButton, GROUP_GAMEOBJ::UI);
-
 
 	CImageObject* m_pContinueButton = new CImageObject;
 	m_pContinueButton->Load(L"ContinueImage", L"texture\\Title\\continue.png");

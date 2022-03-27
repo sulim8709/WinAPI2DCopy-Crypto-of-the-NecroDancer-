@@ -1,7 +1,6 @@
 #include "framework.h"
 
 #include "CBeatNode.h"
-#include "CPlayer.h"
 
 #include "CCollider.h"
 #include "CD2DImage.h"

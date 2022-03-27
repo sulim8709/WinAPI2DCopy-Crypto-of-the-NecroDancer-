@@ -231,6 +231,9 @@
     <ClInclude Include="CPlayerHead.h">
       <Filter>Object\Character\Player</Filter>
     </ClInclude>
+    <ClInclude Include="CTileButton.h">
+      <Filter>Object\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinApi2D.cpp">
@@ -352,6 +355,9 @@
     </ClCompile>
     <ClCompile Include="CPlayerHead.cpp">
       <Filter>Object\Character\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CTileButton.cpp">
+      <Filter>Object\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

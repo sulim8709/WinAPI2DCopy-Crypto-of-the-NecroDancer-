@@ -53,6 +53,7 @@ void CAnimation::render()
 {
     CGameObject* pObj = m_pAnimator->GetObj();
     fPoint fptPos = pObj->GetPos();
+    fPoint fptScale = pObj->GetScale();
     tAniFrm frm = m_vecFrm[m_iCurFrm];
 
     fptPos = fptPos + frm.fptOffset;
@@ -63,10 +64,10 @@ void CAnimation::render()
     {
         CRenderManager::getInst()->RenderRevFrame(
             m_pImg,
-            fptPos.x - frm.fptSlice.x / 2.f,
-            fptPos.y - frm.fptSlice.y / 2.f,
-            fptPos.x + frm.fptSlice.x / 2.f,
-            fptPos.y + frm.fptSlice.y / 2.f,
+            fptPos.x - fptScale.x / 2.f,
+            fptPos.y - fptScale.y / 2.f,
+            fptPos.x + fptScale.x / 2.f,
+            fptPos.y + fptScale.y / 2.f,
             frm.fptLT.x,
             frm.fptLT.y,
             frm.fptLT.x + frm.fptSlice.x,
@@ -77,10 +78,10 @@ void CAnimation::render()
     {
         CRenderManager::getInst()->RenderFrame(
             m_pImg,
-            fptPos.x - frm.fptSlice.x / 2.f,
-            fptPos.y - frm.fptSlice.y / 2.f,
-            fptPos.x + frm.fptSlice.x / 2.f,
-            fptPos.y + frm.fptSlice.y / 2.f,
+            fptPos.x - fptScale.x / 2.f,
+            fptPos.y - fptScale.y / 2.f,
+            fptPos.x + fptScale.x / 2.f,
+            fptPos.y + fptScale.y / 2.f,
             frm.fptLT.x,
             frm.fptLT.y,
             frm.fptLT.x + frm.fptSlice.x,
@@ -91,11 +92,11 @@ void CAnimation::render()
 }
 
 void CAnimation::Create(CD2DImage* img,     // 애니메이션의 이미지
-                        fPoint lt,          // 애니메이션 시작 프레임의 좌상단 좌표
-                        fPoint slice,       // 애니메이션 프레임의 크기
-                        fPoint step,        // 애니메이션 프레임의 반복 위치
-                        float duration,     // 애니메이션 프레임 지속시간
-                        UINT frmCount)      // 애니메이션 프레임 갯수
+    fPoint lt,          // 애니메이션 시작 프레임의 좌상단 좌표
+    fPoint slice,       // 애니메이션 프레임의 크기
+    fPoint step,        // 애니메이션 프레임의 반복 위치
+    float duration,     // 애니메이션 프레임 지속시간
+    UINT frmCount)      // 애니메이션 프레임 갯수
 {
     m_pImg = img;
 
