@@ -1,6 +1,5 @@
 #include "framework.h"
 #include "CIdleState.h"
-#include "CPlayer.h"
 #include "CMonster.h"
 
 CIdleState::CIdleState(STATE_MON state)
@@ -14,7 +13,7 @@ CIdleState::~CIdleState()
 
 void CIdleState::update()
 {
-	CPlayer* pPlayer = CPlayer::GetPlayer();
+	/*CPlayer* pPlayer = CPlayer::GetPlayer();
 	fPoint fptPlayerPos = pPlayer->GetPos();
 
 	CMonster* pMonster = GetMonster();
@@ -25,7 +24,7 @@ void CIdleState::update()
 	if (fLen < pMonster->GetMonInfo().fRecogRange)
 	{
 		ChangeAIState(GetOwnerAI(), STATE_MON::TRACE);
-	}
+	}*/
 
 }
 

@@ -50,7 +50,7 @@ void CMissedText::render()
 
 void CMissedText::SetDir(fVec2 vec)
 {
-	m_fvDir = vec.normalize();
+	m_fvDir = vec.Normalize();
 }
 
 void CMissedText::Load(const wstring& strKey, const wstring& strRelativePath)

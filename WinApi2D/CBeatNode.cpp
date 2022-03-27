@@ -59,7 +59,7 @@ void CBeatNode::render()
 
 void CBeatNode::SetDir(fVec2 vec)
 {
-	m_fvDir = vec.normalize();
+	m_fvDir = vec.Normalize();
 }
 
 void CBeatNode::Load(const wstring& strKey, const wstring& strRelativePath)
