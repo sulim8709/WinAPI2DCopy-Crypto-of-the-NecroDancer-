@@ -338,7 +338,7 @@ void CScene_Tool::ClickTileGroup(CButtonUI* button)
 	if (m_gTile == GROUP_TILE::NONE)
 	{
 		m_gTile = GROUP_TILE::GROUND;
-		button->SetText(L"Ground");
+		button->SetText(L"GROUND");
 	}
 	else if (m_gTile == GROUP_TILE::GROUND)
 	{

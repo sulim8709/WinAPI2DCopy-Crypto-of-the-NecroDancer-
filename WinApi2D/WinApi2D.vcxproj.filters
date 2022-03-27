@@ -91,6 +91,15 @@
     <Filter Include="Object\Character\Player">
       <UniqueIdentifier>{bcaacd69-834b-4420-b3fd-dc4d58869d23}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Component\AI">
+      <UniqueIdentifier>{50aedcc7-bef2-442e-9284-445990772caf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\Gravity">
+      <UniqueIdentifier>{4b0817ff-615c-43f4-93e7-84900b995846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\AI\State">
+      <UniqueIdentifier>{4b2b0f3b-0b5f-4f5c-b8bd-e7c1f6b9c3f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -234,6 +243,18 @@
     <ClInclude Include="CTileButton.h">
       <Filter>Object\UI</Filter>
     </ClInclude>
+    <ClInclude Include="AI.h">
+      <Filter>Engine\Component\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="CIdleState.h">
+      <Filter>Engine\Component\AI\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CState.h">
+      <Filter>Engine\Component\AI\State</Filter>
+    </ClInclude>
+    <ClInclude Include="CTraceState.h">
+      <Filter>Engine\Component\AI\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinApi2D.cpp">
@@ -358,6 +379,18 @@
     </ClCompile>
     <ClCompile Include="CTileButton.cpp">
       <Filter>Object\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="AI.cpp">
+      <Filter>Engine\Component\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="CState.cpp">
+      <Filter>Engine\Component\AI\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CIdleState.cpp">
+      <Filter>Engine\Component\AI\State</Filter>
+    </ClCompile>
+    <ClCompile Include="CTraceState.cpp">
+      <Filter>Engine\Component\AI\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
