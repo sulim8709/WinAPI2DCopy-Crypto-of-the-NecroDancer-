@@ -24,6 +24,12 @@ CScene_Stage_01::~CScene_Stage_01()
 void CScene_Stage_01::update()
 {
 	CScene::update();
+
+	if (KeyDown(VK_TAB))
+	{
+		ChangeScn(GROUP_SCENE::TOOL);
+		CSoundManager::getInst()->Stop(L"Stage01BGM");
+	}
 }
 
 void CScene_Stage_01::Enter()

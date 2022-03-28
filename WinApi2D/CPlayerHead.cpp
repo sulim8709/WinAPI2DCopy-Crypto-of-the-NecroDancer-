@@ -29,20 +29,20 @@ CPlayerHead::CPlayerHead()
 
 
 	CreateAnimator();
-	GetAnimator()->CreateAnimation(L"RightHeadNone", m_pImgHead, fPoint(0.f, 0.f), fPoint(48.f, 48.f), fPoint(48.0f, 0.f), 0.12f, 4, false);
-	GetAnimator()->CreateAnimation(L"RightHeadMove", m_pImgHead, fPoint(0.f, 0.f), fPoint(48.f, 48.f), fPoint(48.0f, 0.f), 0.12f, 4, false);
-	GetAnimator()->CreateAnimation(L"LeftHeadNone", m_pImgHead, fPoint(0.f, 0.f), fPoint(48.f, 48.f), fPoint(48.0f, 0.f), 0.12f, 4, true);
-	GetAnimator()->CreateAnimation(L"LeftHeadMove", m_pImgHead, fPoint(0.f, 0.f), fPoint(48.f, 48.f), fPoint(48.0f, 0.f), 0.12f, 4, true);
+	GetAnimator()->CreateAnimation(L"RightHeadNone", m_pImgHead, fPoint(0.f, 0.f), fPoint(48.f, 48.f), fPoint(48.0f, 0.f), 0.08f, 4, false);
+	GetAnimator()->CreateAnimation(L"RightHeadMove", m_pImgHead, fPoint(0.f, 0.f), fPoint(48.f, 48.f), fPoint(48.0f, 0.f), 0.08f, 4, false);
+	GetAnimator()->CreateAnimation(L"LeftHeadNone", m_pImgHead, fPoint(0.f, 0.f), fPoint(48.f, 48.f), fPoint(48.0f, 0.f), 0.08f, 4, true);
+	GetAnimator()->CreateAnimation(L"LeftHeadMove", m_pImgHead, fPoint(0.f, 0.f), fPoint(48.f, 48.f), fPoint(48.0f, 0.f), 0.08f, 4, true);
 
 
 	CAnimation* pAni;
 	pAni = GetAnimator()->FindAnimation(L"RightHeadMove");	// 머리가 오른쪽으로 움직일 때 오프셋 수정
-	pAni->GetFrame(1).fptOffset = fPoint(0.f, -5.f);
-	pAni->GetFrame(2).fptOffset = fPoint(0.f, -10.f);
+	pAni->GetFrame(1).fptOffset = fPoint(0.f, -15.f);
+	pAni->GetFrame(2).fptOffset = fPoint(0.f, -5.f);
 
 	pAni = GetAnimator()->FindAnimation(L"LeftHeadMove");	// 머리가 왼쪽으로 움직일 때 오프셋 수정
-	pAni->GetFrame(1).fptOffset = fPoint(0.f, -5.f);
-	pAni->GetFrame(2).fptOffset = fPoint(0.f, -10.f);
+	pAni->GetFrame(1).fptOffset = fPoint(0.f, -15.f);
+	pAni->GetFrame(2).fptOffset = fPoint(0.f, -5.f);
 
 	GetAnimator()->Play(L"RightHeadNone");
 }
@@ -172,7 +172,7 @@ void CPlayerHead::update_Ani()
 		pos.y -= 150.f * fDT;									// 위로 이동
 
 		m_fMovingTerm += fDT;									// 움직이는 텀 구하기 위한 시간 축적
-		if (m_fMovingTerm > 0.48)								// 0.48초(애니메이터 시간) 초과 될 경우
+		if (m_fMovingTerm > 0.32)								// 0.48초(애니메이터 시간) 초과 될 경우
 		{
 			m_bSuccessed = StateMoveHead::NONE;					// 상태 NONE으로 바꿈
 			m_fMovingTerm = 0;									// 시간 0초로 초기화
@@ -194,7 +194,7 @@ void CPlayerHead::update_Ani()
 		pos.y += 150.f * fDT;									// 아래로 이동
 
 		m_fMovingTerm += fDT;							
-		if (m_fMovingTerm > 0.48)						
+		if (m_fMovingTerm > 0.32)
 		{
 			m_bSuccessed = StateMoveHead::NONE;			
 			m_fMovingTerm = 0;							
@@ -213,7 +213,7 @@ void CPlayerHead::update_Ani()
 		pos.x -= 150.f * fDT;									// 왼쪽으로 이동
 
 		m_fMovingTerm += fDT;
-		if (m_fMovingTerm > 0.48)						
+		if (m_fMovingTerm > 0.32)
 		{
 			m_bSuccessed = StateMoveHead::NONE;
 			m_fMovingTerm = 0;
@@ -228,7 +228,7 @@ void CPlayerHead::update_Ani()
 		pos.x += 150.f * fDT;									// 오른쪽으로 이동
 
 		m_fMovingTerm += fDT;
-		if (m_fMovingTerm > 0.48)	
+		if (m_fMovingTerm > 0.32)
 		{
 			m_bSuccessed = StateMoveHead::NONE;
 			m_fMovingTerm = 0;
